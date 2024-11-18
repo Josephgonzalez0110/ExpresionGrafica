@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Sabajones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Modal de Promociones -->
+<div id="promocionesModal" class="modal">
+    <div class="modal-content">
+        <span class="closePromociones">&times;</span>
+        <h2>¡Oferta Especial en Sabajones!</h2>
+        <img src="resources/sabajonFeijoa.png" alt="Sabajón Feijoa en Promoción" class="promo-image">
+        <p class="promo-text">Aprovecha un <strong>10% de descuento</strong> en nuestro Sabajón Feijoa 750cc.</p>
+        <p class="precio-original">Precio original: <s>$40.000</s></p>
+        <p class="precio-descuento">Precio con descuento: <strong>$36.000</strong></p>
+        <button onclick="closePromocionesModal()" class="promo-button">Ver Más Sabajones</button>
+    </div>
+</div>
+    <header>
+        <div class="logo">
+            <img src="resources/logo2.png" alt="Sabajones la tierrita">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sabajones">Sabajones</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="carousel-container">
+        <div class="carousel">
+            <img src="resources/CarruselImagen1.png" alt="Sabajón Feijoa">
+            <img src="resources/CarruselImagen2.png" alt="Sabajón Café">
+           <!-- <img src="resources/sabajonMelocoton.png" alt="Sabajón Melocotón">-->
+            
+            <div class="carousel-controls">
+                <button class="carousel-control prev">❮</button>
+                <button class="carousel-control next">❯</button>
+            </div>
+            
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <!-- <span class="indicator"></span>-->
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="inicio" class="hero">
+        <h2>Los mejores Sabajones de producción local</h2>
+        <p>
+            Los momentos se disfrutan mejor, con la auténtica tradición <br>
+            Sabajones producidos en el municipio de Tibasosa <br>
+            del el departamento de Boyacá hechos con los sabores<br>
+            autóctonos de la región perfecta para compartir
+        </p>
+        <a href="#sabajones" class="cta">Ver Sabajones</a>
+    </section>
+
+    <section id="sabajones" class="productos">
+        <h2>Nuestros Sabajones</h2>
+        <div class="galeria">
+            <div class="sabajon">
+                <img src="resources/sabajonFeijoa.png" alt="Sabajon Feijoa">
+                <h3>Don Joaquín Feijoa 750cc</h3>
+                <p>$40.000</p>
+            </div>
+            <div class="sabajon">
+                <img src="resources/sabajonCafe.png" alt="Sabajon Cafe">
+                <h3>Don Joaquín Cafe 375cc</h3>
+                <p>$25.000</p>
+            </div>
+            <div class="sabajon">
+                <img src="resources/sabajonMelocoton.png" alt="Sabajon Melocoton">
+                <h3>Don Joaquín Feijoa 750cc</h3>
+                <p>$40.000</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Historia del Sabajón</h2>
+        <article>
+            <h3>La bebida colombiana que proviene de un postre italiano</h3>
+            <p>
+                El Sabajón es una bebida alcohólica muy popular en Colombia, 
+                especialmente en épocas festivas como navidad, 
+                su composición es relativamente simple: azúcar, alcohol, canela, leche, leche condensada, 
+                yemas de huevos y mayoritariamente aguardiente, aunque también se suele utilizar ron.
+                <br>
+                Por sus ingredientes y su aspecto, esta bebida es similar a los cócteles,
+                ponches y postres que se suelen tomar en Argentina, Estados Unidos, España, 
+                Francia, México, Uruguay y Venezuela, pero esto tiene un motivo, su origen.
+                <br>
+                El Sabajón colombiano, el Sabayón o Sambayón argentino, 
+                el Rompope mexicano, el Sabajon francés, el Sabayon español y el ponche de crema 
+                venezolano tienen su origen en el Zabaione o Zabaglione, un postre que fue inventado 
+                en Italia a comienzos del siglo XVI.
+                <br>
+                Quien invento este postre es incierto, pues dependiendo de la zona se habla de una 
+                persona u otra, por ejemplo, muchos hablan de Emiliano Giovanni Baglioni, 
+                un capitán de navío, que sería alimentado con uvas, vino y huevos en los 
+                puertos italianos, creando de forma casi mágica este postre; otra creencia 
+                popular es la del fraile franciscano Pascual Baylón, debido a que en la literatura
+                este postre era referenciado como “la crema di San Baylon”.
+            </p>
+        </article>
+    </section>
+
+    <section id="contacto" class="formulario">
+        <h2>Contáctanos</h2>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <div id="paginaVenta" class="pagina">
+        <div class="pagina-content">
+            <span class="close">&times;</span>
+            <img id="imagen" src="" alt="Detalle Sabajón">
+            <h3 id="titulo"></h3>
+            <p id="precio"></p>
+            <p id="descripcion"></p>
+    
+            <!--  sección para seleccionar cantidad -->
+            <div class="cantidadPro">
+                <label for="cantidadPro">Cantidad:</label>
+                <input type="number" id="cantidadPro" value="1" min="1" max="10">
+                <p id="cantidadDisponible"></p> <!-- Cantidad disponible -->
+
+                
+            </div>
+            <!-- Mostrar precio total antes de la compra -->
+            <p id="perocioT"></p>
+            <!-- Botón para realizar la compra -->
+            <button id="botonCompra" class="Comprar">Comprar</button>
+        </div>
+    </div>
+    
+    <!-- pagina  de compra -->
+  <!-- Modal de confirmación de compra -->
+<div id="confirmacionCompra" class="pagina">
+    <div class="pagina-content">
+        <span class="cerrarConfirmacion">&times;</span>
+        <h3>¡Compra realizada con éxito!</h3>
+        <p>Gracias por tu compra. Por favor, proporciona los siguientes datos para el envío:</p>
+
+        <!-- Campo de entrada para la dirección -->
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <!-- Campo de entrada para la ciudad -->
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+
+        <!-- Botón para confirmar la compra y enviar los datos -->
+        <button id="confirmarCompra" class="Comprar">Confirmar Compra</button>
+    </div>
+</div>
+    <script>
+          let currentSabajonIndex = 0; 
+        const sabajones = [
+            {
+                image: 'resources/sabajonFeijoa.png',
+                title: 'Don Joaquín Feijoa 750cc',
+                price: 40000,
+                description: 'Sabajón de feijoa, producido localmente en Tibasosa, Boyacá.',
+                stock: 5 // Cantidad disponible
+            },
+            {
+                image: 'resources/sabajonCafe.png',
+                title: 'Don Joaquín Cafe 375cc',
+                price: 25000,
+                description: 'Sabajón con sabor a café, ideal para acompañar postres y sobremesas.',
+                stock: 8
+            },
+            {
+                image: 'resources/sabajonMelocoton.png',
+                title: 'Don Joaquín Melocotón 750cc',
+                price: 40000,
+                description: 'Delicioso sabajón de melocotón con una suave textura y gran sabor.',
+                stock: 3
+            }
+        ];
+    
+        const pagina = document.getElementById("paginaVenta");
+        const imagen = document.getElementById("imagen");
+        const titulo = document.getElementById("titulo");
+        const precio = document.getElementById("precio");
+        const direccionInput = document.getElementById("direccion");
+        const ciudadInput = document.getElementById("ciudad");
+        const confirmarCompraButton = document.getElementById("confirmarCompra");
+        const descripcion = document.getElementById("descripcion");
+        const perocioTElement = document.getElementById("perocioT");
+        const cantidadP = document.getElementById("cantidadPro");
+        const cantidadDisponibleElement = document.getElementById("cantidadDisponible");
+        const botonCompra = document.getElementById("botonCompra");
+        const confirmacion = document.getElementById("confirmacionCompra");
+        const cerrarConfirmacion = document.getElementsByClassName("cerrarConfirmacion")[0];
+        const closepagina = document.getElementsByClassName("close")[0];
+        
+    
+        let preciototal = 0;
+        let stockActualizado = 0; // Stock actual del sabajón
+    
+        // Abrir pagina al hacer click en las imágenes
+        document.querySelectorAll('.sabajon img').forEach((img, index) => {
+    img.addEventListener('click', () => {
+        const sabajon = sabajones[index];
+        currentSabajonIndex = index; // Guardar el índice del producto actual
+        imagen.src = sabajon.image;
+        titulo.textContent = sabajon.title;
+        precio.textContent = `$${sabajon.price}`;
+        descripcion.textContent = sabajon.description;
+        pagina.style.display = "flex";
+        preciototal = sabajon.price;
+        stockActualizado = sabajon.stock; // Actualizar la cantidad disponible
+        cantidadDisponibleElement.textContent = `Disponibles: ${stockActualizado}`;
+        cantidadP.max = stockActualizado; // Limitar la cantidad seleccionable al stock disponible
+        perocioTElement.textContent = ''; // Limpiar el precio total
+        cantidadP.value = 1; // Restablecer la cantidad a 1
+        updateTotalPrice(); // Mostrar el precio iniciall
+            });
+        });
+    
+        // Cerrar la pagina de compra
+        closepagina.onclick = function() {
+            pagina.style.display = "none";
+        };
+    
+        window.onclick = function(event) {
+            if (event.target == pagina) {
+                pagina.style.display = "none";
+            }
+        };
+    
+        // Actualiza el precio  cada vez que cambie la cantidad
+        cantidadP.addEventListener('input', updateTotalPrice);
+    
+        function updateTotalPrice() {
+            const cantidadPro = parseInt(cantidadP.value);
+            const perocioT = preciototal * cantidadPro;
+            perocioTElement.textContent = `Total a pagar: $${perocioT}`;
+        }
+    
+        // Mostrar la pagina de confirmación de compra
+        botonCompra.onclick = function() {
+            const ProVendidos = parseInt(cantidadP.value);
+    
+            if ( ProVendidos > stockActualizado) {
+                alert('No hay suficientes productos disponibles.');
+            } else {
+                sabajones[currentSabajonIndex].stock -=  ProVendidos;
+                stockActualizado -=  ProVendidos;
+
+        // Actualizar la cantidad disponible 
+        cantidadDisponibleElement.textContent = `Disponibles: ${stockActualizado}`;
+        cantidadP.max =stockActualizado; // Actualizar el máximo permitido para la cantidad seleccionable
+
+        // Cerrar pagina de compra 
+        pagina.style.display = "none";
+
+        // Mostrar pagina de confirmación de compra
+        confirmacionCompra.style.display = "flex";
+
+        // Si el stock llega a 0, mostrar un mensaje
+        if (stockActualizado === 0) {
+            alert('El producto se ha agotado.');
+        }
+            }
+        };
+    
+        // Cerrar pagina  de confirmación
+        cerrarConfirmacion.onclick = function() {
+            confirmacion.style.display = "none";
+        };
+    
+        window.onclick = function(event) {
+            if (event.target == confirmacionCompra) {
+                confirmacion.style.display = "none";
+            }
+        };
+    // Selecciona el modal de promociones y el botón de cierre
+const promocionesModal = document.getElementById("promocionesModal");
+const closePromociones = document.querySelector(".closePromociones");
+
+// Muestra el modal de promociones cuando se carga la página
+window.onload = function() {
+    promocionesModal.style.display = "flex";
+};
+
+// Cierra el modal cuando el usuario hace clic en el botón de cerrar
+closePromociones.onclick = function() {
+    promocionesModal.style.display = "none";
+};
+
+// Función para cerrar el modal desde el botón de la promoción
+function closePromocionesModal() {
+    promocionesModal.style.display = "none";
+}
+
+// Cierra el modal si el usuario hace clic fuera de él
+window.onclick = function(event) {
+    if (event.target == promocionesModal) {
+        promocionesModal.style.display = "none";
+    }
+};
+// Función al hacer clic en el botón de Confirmar Compra
+confirmarCompraButton.onclick = function () {
+    // Obtener los valores de los campos de dirección y ciudad
+    const direccion = direccionInput.value.trim();
+    const ciudad = ciudadInput.value.trim();
+
+    // Validar que los campos no estén vacíos
+    if (direccion === "" || ciudad === "") {
+        alert("Por favor, completa todos los campos requeridos para confirmar la compra.");
+        return;
+    }
+
+    // Mostrar mensaje de confirmación
+    alert(`¡Gracias por tu compra!\nTu pedido será enviado a:\nDirección: ${direccion}\nCiudad: ${ciudad}`);
+
+    // Cerrar el modal de confirmación de compra
+    confirmacion.style.display = "none";
+
+    // Opcional: Restablecer los campos de dirección y ciudad
+    direccionInput.value = "";
+    ciudadInput.value = "";
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.carousel img');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    
+    let currentIndex = 0;
+    
+    // Mostrar la primera imagen
+    images[0].classList.add('active');
+    
+    function showImage(index) {
+        // Ocultar todas las imágenes
+        images.forEach(img => img.classList.remove('active'));
+        // Mostrar la imagen seleccionada
+        images[index].classList.add('active');
+        
+        // Actualizar indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+    
+    // Función para ir a la siguiente imagen
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+    
+    // Función para ir a la imagen anterior
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+    
+    // Eventos para los botones
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
+    
+    // Eventos para los indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            showImage(currentIndex);
+        });
+    });
+    
+    // Cambio automático cada 5 segundos
+    setInterval(nextImage, 5000);
+});
+</script>
